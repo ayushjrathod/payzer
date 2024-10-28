@@ -1,5 +1,5 @@
 {
-  "name": "Paytm Clone 3.0",
+  "name": "payzer",
   "private": true,
   "scripts": {
     "build": "turbo build",
