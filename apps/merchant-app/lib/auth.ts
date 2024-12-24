@@ -12,6 +12,9 @@ export const authOptions = {
     async signIn({
       user,
       account,
+      profile,
+      email,
+      credentials,
     }: {
       user: {
         email: string;
@@ -20,6 +23,9 @@ export const authOptions = {
       account: {
         provider: "google" | "github";
       };
+      profile: any;
+      email: any;
+      credentials: any;
     }) {
       console.log("hi signin");
       if (!user || !user.email) {

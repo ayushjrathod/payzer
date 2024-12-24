@@ -5,8 +5,8 @@ CREATE TYPE "AuthType" AS ENUM ('Google', 'Github');
 CREATE TABLE "User" (
     "id" SERIAL NOT NULL,
     "name" TEXT,
-    "email" TEXT NOT NULL,
-    "number" INTEGER NOT NULL,
+    "email" TEXT,
+    "number" INTEGER,
     "password" TEXT NOT NULL,
 
     CONSTRAINT "User_pkey" PRIMARY KEY ("id")
