@@ -36,7 +36,7 @@ export const authOptions = {
         try {
           const user = await db.user.create({
             data: {
-              number: parseInt(credentials.phone, 10), // Convert phone number to integer
+              number: credentials.phone, // Removed parseInt to pass string
               password: hashedPassword,
             },
           });
