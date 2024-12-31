@@ -25,7 +25,13 @@
     "packages/*"
   ],
   "dependencies": {
+    "@nextui-org/react": "^2.6.10",
+    "@nextui-org/system": "^2.4.5",
+    "@nextui-org/theme": "^2.4.4",
     "@prisma/client": "^6.1.0",
-    "bcrypt": "^5.1.1"
+    "axios": "^1.7.9",
+    "bcrypt": "^5.1.1",
+    "framer-motion": "^11.15.0",
+    "lucide-react": "^0.469.0"
   }
 }

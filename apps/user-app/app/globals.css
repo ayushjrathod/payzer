@@ -41,3 +41,26 @@ a {
     color-scheme: dark;
   }
 }
+
+/* for login component */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input:focus ~ label,
+  input:not(:placeholder-shown) ~ label {
+    @apply transform scale-75 -translate-y-6 text-primary;
+  }
+
+  input:focus ~ label {
+    @apply text-primary;
+  }
+
+  .animate-label {
+    transition:
+      transform 0.15s ease-out,
+      color 0.15s ease-out,
+      background-color 0.2s ease-out;
+  }
+}

@@ -16,10 +16,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
     <html lang="en">
       <Providers>
         <body className={inter.className}>
-          <div className="min-w-screen min-h-screen bg-gray-100 p-4">
-            <AppbarClient />
-            {children}
-          </div>
+          {/* <div className="min-w-screen min-h-screen bg-gray-100 p-4"> */}
+          {/* <AppbarClient /> */}
+          {children}
+          {/* </div> */}
         </body>
       </Providers>
     </html>
