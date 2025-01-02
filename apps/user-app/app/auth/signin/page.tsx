@@ -3,7 +3,7 @@
 import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Input } from "@nextui-org/react";
 import axios from "axios";
 import { Eye, EyeOff } from "lucide-react";
-import { getSession } from "next-auth/react";
+import { getSession, signIn } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -40,30 +40,18 @@ function Login() {
       return;
     }
 
-    try {
-      const response = await axios.post(
-        "/v1/users/login",
-        { username, password },
-        {
-          headers: { "Content-Type": "application/json" },
-          withCredentials: true,
-        }
-      );
+    const result = await signIn("credentials", {
+      redirect: false,
+      phone: username,
+      password,
+    });
 
-      const { user, accessToken } = response.data.data;
-      // Handle successful login (e.g., set auth context, redirect)
+    if (result?.error) {
+      setErrorMsg(result.error);
+    } else {
       router.push("/");
-    } catch (error: any) {
-      if (error.response?.status === 400) {
-        setErrorMsg("Missing Username or Password");
-      } else if (error.response?.status === 401) {
-        setErrorMsg("Unauthorized");
-      } else {
-        setErrorMsg("Login Failed");
-      }
-    } finally {
-      setIsLoading(false);
     }
+    setIsLoading(false);
   };
 
   return (

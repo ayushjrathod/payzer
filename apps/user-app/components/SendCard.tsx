@@ -1,7 +1,6 @@
 "use client";
 import { Button } from "@repo/ui/button";
 import { Card } from "@repo/ui/card";
-import { Center } from "@repo/ui/center";
 import { TextInput } from "@repo/ui/textinput";
 import { useState } from "react";
 import { p2pTransfer } from "../lib/actions/p2pTransfer";
@@ -11,8 +10,8 @@ export function SendCard() {
   const [amount, setAmount] = useState("");
 
   return (
-    <div className="h-[90vh]">
-      <Center>
+    <div className="">
+      <div className="w-full">
         <Card title="Send">
           <div className="min-w-72 pt-2">
             <TextInput
@@ -40,7 +39,7 @@ export function SendCard() {
             </div>
           </div>
         </Card>
-      </Center>
+      </div>
     </div>
   );
 }
